@@ -1,15 +1,20 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { HomePage } from '../../pages/homePage/homePage';
+import { ValidPage } from '../../pages/validPage/validPage';
+import { InvalidPage } from '../../pages/invalidPage/invalidPage';
+import { ProductPage } from '../../pages/productPage/productPage';
+import { SetPage } from '../../pages/setPage/setPage';
 
-const HomePage = React.lazy(() => import('pages/homePage'));
 
-export type RoutsType = {
-  component: ReactNode;
-  name: string;
-  path: string;
+export const AppRoutes = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/valid" element={<ValidPage/>} />
+      <Route path="/invalid" element={<InvalidPage/>} />
+      <Route path="/product" element={<ProductPage/>} />
+      <Route path="/set" element={<SetPage/>} />
+       </Routes>
+  );
 };
-
-const routes: RoutsType[] = [
-  { name: 'Начальная страница', path: '/home', component: (<HomePage />) },
-];
-
-export default routes;
