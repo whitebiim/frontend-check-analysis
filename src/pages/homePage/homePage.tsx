@@ -2,6 +2,11 @@ import React from 'react';
 import { Header } from '../../components/layout/header/header';
 import { Sidebar } from '../../components/layout/sidebar/sidebar';
 import './homePage.css';
+import mockReceipts from '../../mocks/mocks-data';
+
+import Chart from 'chart.js/auto'; 
+import { Bar } from 'react-chartjs-2'; 
+
 
 export const HomePage = () => {
   return (

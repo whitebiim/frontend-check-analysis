@@ -27,12 +27,12 @@
 .stats-block {
   flex: 1;
   min-width: 700px;
-  height: 350px;
+  height: 310px;
  }
 
 .chart-block.medium {
   width: 500px;
-  height: 350px;
+  height: 310px;
 }
 
 .chart-block.wide {

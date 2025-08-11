@@ -1,13 +1,146 @@
-.app-layout {
-    display: flex;
-    min-height: 100vh;
+/* Основные стили для страницы валидных чеков */
+.valid-content-area {
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Строки с блоками */
+.valid-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Общие стили для блоков */
+.valid-stats-block,
+.valid-chart-block,
+.valid-list-block,
+.valid-details-block {
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  font-family: 'Titillium Web', sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+/* Блок статистики */
+.valid-stats-block {
+  flex: 0 1 calc(50% - 10px); /* 50% ширины минус половина gap */
+  min-width: 300px;
+  height: 350px;
+}
+
+/* Блок с графиком */
+.valid-chart-block {
+  flex: 0 1 calc(50% - 10px); /* 50% ширины минус половина gap */
+  min-width: 300px;
+  height: 350px;
+}
+
+/* Блок списка чеков */
+.valid-list-block {
+  flex: 0 1 calc(50% - 10px);
+  min-width: 300px;
+  height: 950px;
+}
+
+/* Блок деталей чека */
+.valid-details-block {
+  flex: 0 1 calc(50% - 10px);
+  min-width: 300px;
+  height: 950px;
+}
+
+/* Заголовки блоков */
+.valid-stats-block h3,
+.valid-chart-block h3,
+.valid-list-block h3,
+.valid-details-block h3 {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 300;
+  color: #1E293B;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: clamp(1rem, 1.5vw, 1.25rem); /* Адаптивный размер шрифта */
+  letter-spacing: 0.5px;
+}
+
+/* Контейнеры для контента */
+.valid-stats-content,
+.valid-chart-container,
+.valid-list-container,
+.valid-details-container {
+  height: calc(100% - 40px);
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+  background: #F8FAFC;
+  border-radius: 8px;
+  font-family: 'Titillium Web', sans-serif;
+  color: #64748B;
+  overflow: hidden; /* Для предотвращения выхода контента за границы */
+  
+}
+
+
+
+
+
+
+/* Эффекты при наведении */
+.valid-stats-block:hover,
+.valid-chart-block:hover,
+.valid-list-block:hover,
+.valid-details-block:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .valid-row {
+    flex-wrap: wrap;
   }
   
-  .main-content {
-    flex: 1;
-    margin-left: 100px; /* Ширина sidebar */
+  .valid-stats-block,
+  .valid-chart-block,
+  .valid-list-block,
+  .valid-details-block {
+    flex: 1 1 100%;
   }
   
-  .content-area {
-    padding: 20px;
+  .valid-stats-block,
+  .valid-chart-block {
+    height: 350px;
   }
+  
+  .valid-list-block,
+  .valid-details-block {
+    height: 500px;
+  }
+}
+
+/* Для очень больших экранов */
+@media (min-width: 2000px) {
+  .valid-content-area {
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+}
+
+/* Плейсхолдеры */
+.valid-placeholder {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  color: #94A3B8;
+  text-align: center;
+  padding: 20px;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+}
+
+
