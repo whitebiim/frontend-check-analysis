@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header } from '../../components/layout/header/header';
 import { Sidebar } from '../../components/layout/sidebar/sidebar';
+import { DailyStatsProduct } from '../../components/stats/DailyStatsProduct';
 import './productPage.css';
 
 export const ProductPage = () => {
@@ -15,6 +16,9 @@ export const ProductPage = () => {
             <div className="product-stats-block">
               <h3>Статистика товаров</h3>
               <div className="product-stats-content">
+              <div className="stats-grid-wrapper">
+                 <DailyStatsProduct />
+                 </div>
                 <div className="product-placeholder">График статистики товаров</div>
               </div>
             </div>

@@ -1,0 +1,107 @@
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 10px;
+}
+
+.stat-card {
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  text-align: left; /* Добавлено выравнивание по левому краю */
+}
+
+.stat-card:nth-child(1) { background-color: #DCFCE7; }
+.stat-card:nth-child(2) { background-color: #E8FFFC; }
+.stat-card:nth-child(3) { background-color: #F0F9FF; }
+.stat-card:nth-child(4) { background-color: #F3E8FF; }
+
+.stat-icon {
+  width: 40px;
+  height: 40px;
+  align-self: flex-start; 
+}
+
+.stat-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 10px 0;
+  color: #1E293B;
+  text-align: left;
+}
+
+.stat-title {
+  font-size: 1rem;
+  color: #475569;
+  font-weight: 500;
+  text-align: left; 
+}
+
+.stat-change {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  justify-content: flex-start; 
+}
+
+.stat-change.positive {
+  color: #16A34A;
+}
+
+.stat-change.negative {
+  color: #DC2626;
+}
+
+.stat-change span {
+  color: #64748B;
+  margin-left: 5px;
+  font-size: 0.8rem;
+}
+
+.last-updated {
+  grid-column: 1 / -1;
+  text-align: right;
+  font-size: 0.8rem;
+  color: #64748B;
+  padding-top: 10px;
+  border-top: 1px solid #E2E8F0;
+}
+
+@media (max-width: 1200px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stat-card {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-card {
+    width: 100%;
+    height: 160px; /* Немного уменьшаем высоту на мобильных */
+  }
+  
+  .stat-value {
+    font-size: 1.5rem; /* Уменьшаем размер шрифта на мобильных */
+  }
+}

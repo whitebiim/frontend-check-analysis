@@ -2,6 +2,7 @@
 import React from 'react';
 import { Header } from '../../components/layout/header/header';
 import { Sidebar } from '../../components/layout/sidebar/sidebar';
+import { DailyStatsReceipts } from '../../components/stats/DailyStatsReceipts';
 import './invalidPage.css';
 
 export const InvalidPage = () => {
@@ -17,7 +18,10 @@ export const InvalidPage = () => {
               <h3>Ежедневная статистика</h3>
               <div className="invalid-stats-content">
                 {/* статистика по невалидным чекам */}
-                <div className="invalid-placeholder">Статистика невалидных чеков</div>
+                <div className="stats-grid-wrapper">
+                 <DailyStatsReceipts />
+                 </div>
+                <div className="invalid-placeholder"></div>
               </div>
             </div>
             <div className="invalid-chart-block">

@@ -18,7 +18,7 @@ export const SetPage = () => {
         setTimeout(() => {
         setIsVisible(true);
       }, 50); 
-    } else {
+    } else { 
       setIsVisible(false);
     }
   }, [isDarkMode]);

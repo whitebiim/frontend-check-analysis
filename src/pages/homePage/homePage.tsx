@@ -1,8 +1,11 @@
+
 import React from 'react';
 import { Header } from '../../components/layout/header/header';
 import { Sidebar } from '../../components/layout/sidebar/sidebar';
+import { DailyStats } from '../../components/stats/DailyStats';
+
+// import { SalesChart } from '../../components/charts/SalesChart';
 import './homePage.css';
-import mockReceipts from '../../mocks/mocks-data';
 
 import Chart from 'chart.js/auto'; 
 import { Bar } from 'react-chartjs-2'; 
@@ -20,6 +23,7 @@ export const HomePage = () => {
             <div className="stats-block">
               <h3>Ежедневная статистика</h3>
               <div className="stats-content">
+              <DailyStats />
                 {/* тут потом доделать */}
               </div>
             </div>
@@ -27,6 +31,7 @@ export const HomePage = () => {
               <h3>Динамика продаж</h3>
               <div className="chart-container">
                 {/* тут потом доделать  */}
+                {/* <SalesChart /> */}
               </div>
             </div>
           </div>
