@@ -4,11 +4,15 @@ import { Header } from '../../components/layout/header/header';
 import { Sidebar } from '../../components/layout/sidebar/sidebar';
 import { DailyStats } from '../../components/stats/DailyStats';
 
-// import { SalesChart } from '../../components/charts/SalesChart';
+import { MonthlySales } from '../../components/homePage/monthlySales';
+import { SumReceiptAverage } from '../../components/homePage/sumReceipt';
+import { CountReceiptAverage } from '../../components/homePage/countReceipt';
+import { PaymentType } from '../../components/homePage/typePay';
+
 import './homePage.css';
 
-import Chart from 'chart.js/auto'; 
-import { Bar } from 'react-chartjs-2'; 
+// import Chart from 'chart.js/auto'; 
+// import { Bar } from 'react-chartjs-2'; 
 
 
 export const HomePage = () => {
@@ -22,6 +26,7 @@ export const HomePage = () => {
           <div className="dashboard-row">
             <div className="stats-block">
               <h3>Ежедневная статистика</h3>
+              
               <div className="stats-content">
               <DailyStats />
                 {/* тут потом доделать */}
@@ -31,7 +36,7 @@ export const HomePage = () => {
               <h3>Динамика продаж</h3>
               <div className="chart-container">
                 {/* тут потом доделать  */}
-                {/* <SalesChart /> */}
+         
               </div>
             </div>
           </div>
@@ -39,10 +44,13 @@ export const HomePage = () => {
           {/* вторая строка */}
           <div className="dashboard-row">
             <div className="chart-block wide">
-              <h3>Продажи за месяц</h3>
-              <div className="chart-container">
+              {/* <h3>Продажи за месяц</h3> */}
+              {/* <div className="chart-container"> */}
                 {/* тут потом доделать большой график */}
-              </div>
+               
+                 <MonthlySales />
+                   
+              {/* </div> */}
             </div>
           </div>
 
@@ -52,18 +60,22 @@ export const HomePage = () => {
               <h3>Тип оплаты</h3>
               <div className="chart-container">
                 {/* тут потом доделать */}
+                <PaymentType/>
               </div>
             </div>
             <div className="chart-block small">
               <h3>Средний чек</h3>
               <div className="chart-container">
                 {/* тут потом доделать  */}
+                <SumReceiptAverage />
               </div>
             </div>
             <div className="chart-block small">
               <h3>Количество чеков</h3>
               <div className="chart-container">
                 {/* тут потом доделать  */}
+
+                <CountReceiptAverage/>
               </div>
             </div>
           </div>

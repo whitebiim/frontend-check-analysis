@@ -65,7 +65,7 @@
   color: #1E293B;
   margin-top: 0;
   margin-bottom: 20px;
-  font-size: clamp(1rem, 1.5vw, 1.25rem); /* Адаптивный размер шрифта */
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
   letter-spacing: 0.5px;
 }
 
@@ -82,7 +82,7 @@
   border-radius: 8px;
   font-family: 'Titillium Web', sans-serif;
   color: #64748B;
-  overflow: hidden; /* Для предотвращения выхода контента за границы */
+  overflow: hidden; 
   
 }
 

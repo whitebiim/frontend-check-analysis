@@ -1,0 +1,48 @@
+ Monthly Sales Chart Styles
+.monthly-sales-chart {
+  width: 70%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.chart-header h3 {
+  margin: 0;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 1.25rem;
+  color: #1E293B;
+}
+
+
+
+.month-select {
+  padding: 8px 15px;
+  border-radius: 6px;
+  border: 1px solid #E2E8F0;
+  background-color: #FFFFFF;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 0.95rem;
+  color: #1E293B;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.month-select:hover {
+  border-color: #5D5FEF;
+}
+/*
+.chart-container {
+  flex: 1;
+  min-height: 400px;
+  width: 100%;
+
+  position: relative;
+} */

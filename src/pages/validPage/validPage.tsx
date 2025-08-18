@@ -2,6 +2,8 @@ import React from 'react';
 import { Header } from '../../components/layout/header/header';
 import { Sidebar } from '../../components/layout/sidebar/sidebar';
 import { DailyStatsReceipts } from '../../components/stats/DailyStatsReceipts';
+import { ReceiptValidityChart } from '../../components/validInvalidReceipt/validInvalidReceipt';
+
 import './validPage.css';
 
 export const ValidPage = () => {
@@ -16,18 +18,15 @@ export const ValidPage = () => {
             <div className="valid-stats-block">
               <h3>Ежедневная статистика</h3>
               <div className="valid-stats-content">
-                {/* Здесь будет статистика по валидным чекам */}
                 <div className="stats-grid-wrapper">
                    <DailyStatsReceipts />
                    </div>
-                <div className="valid-placeholder"></div>
               </div>
             </div>
             <div className="valid-chart-block">
-              <h3>График валидных чеков</h3>
+              <h3>График чеков</h3>
               <div className="valid-chart-container">
-                {/* Здесь будет график */}
-                <div className="valid-placeholder">График валидных чеков</div>
+                <ReceiptValidityChart />
               </div>
             </div>
           </div>

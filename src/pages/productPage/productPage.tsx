@@ -2,6 +2,9 @@ import React from 'react';
 import { Header } from '../../components/layout/header/header';
 import { Sidebar } from '../../components/layout/sidebar/sidebar';
 import { DailyStatsProduct } from '../../components/stats/DailyStatsProduct';
+import { ProductType } from '../../components/productTop/ProductType';
+import { ProductName } from '../../components/productTop/ProductName';
+
 import './productPage.css';
 
 export const ProductPage = () => {
@@ -19,19 +22,21 @@ export const ProductPage = () => {
               <div className="stats-grid-wrapper">
                  <DailyStatsProduct />
                  </div>
-                <div className="product-placeholder">График статистики товаров</div>
+                {/* <div className="product-placeholder">График статистики товаров</div> */}
               </div>
             </div>
             <div className="product-types-block">
               <h3>Популярные категории</h3>
               <div className="product-types-content">
-                <div className="product-placeholder">Список категорий</div>
+                {/* <div className="product-placeholder">Список категорий</div> */}
+                <ProductType />
               </div>
             </div>
             <div className="product-popular-block">
               <h3>Топ товаров</h3>
               <div className="product-popular-content">
-                <div className="product-placeholder">Рейтинг товаров</div>
+                {/* <div className="product-placeholder">Рейтинг товаров</div> */}
+                <ProductName />
               </div>
             </div>
           </div>
