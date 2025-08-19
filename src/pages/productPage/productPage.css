@@ -53,14 +53,14 @@
 .product-list-block {
   flex: 0 1 calc(60% - 10px);
   min-width: 300px;
-  height: 960px;
+  height: 500px;
 }
 
 /* Блок деталей товара */
 .product-details-block {
   flex: 0 1 calc(40% - 10px);
   min-width: 300px;
-  height: 960px;
+  height: 500px;
 }
 
 /* Заголовки блоков */

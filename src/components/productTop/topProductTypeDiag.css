@@ -1,0 +1,61 @@
+.product-categories-chart {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  .product-categories-chart h3 {
+    margin: 0 0 15px 0;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.1rem;
+    color: #1E293B;
+    text-align: center;
+  }
+  
+  .chart-container {
+    width: 250px;
+    height: 250px;
+    position: relative;
+  }
+  
+  .chart-center-info {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;
+  }
+  
+  .total-percentage {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1E293B;
+  }
+  
+  .total-label {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 0.8rem;
+    color: #64748B;
+    margin-top: 2px;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .chart-container {
+      width: 200px;
+      height: 200px;
+    }
+    
+    .total-percentage {
+      font-size: 1.2rem;
+    }
+    
+    .total-label {
+      font-size: 0.7rem;
+    }
+  }

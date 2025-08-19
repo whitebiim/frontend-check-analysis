@@ -4,6 +4,8 @@ import { Sidebar } from '../../components/layout/sidebar/sidebar';
 import { DailyStatsProduct } from '../../components/stats/DailyStatsProduct';
 import { ProductType } from '../../components/productTop/ProductType';
 import { ProductName } from '../../components/productTop/ProductName';
+import { ProductCategoriesChart } from '../../components/productTop/topProductTypeDiag';
+import { ProductCountChart } from '../../components/productTop/productInReceipt';
 
 import './productPage.css';
 
@@ -35,7 +37,6 @@ export const ProductPage = () => {
             <div className="product-popular-block">
               <h3>Топ товаров</h3>
               <div className="product-popular-content">
-                {/* <div className="product-placeholder">Рейтинг товаров</div> */}
                 <ProductName />
               </div>
             </div>
@@ -44,47 +45,21 @@ export const ProductPage = () => {
           {/* 2 строка */}
           <div className="product-row">
             <div className="product-list-block">
-              <h3>Список товаров</h3>
-              <div className="product-list-container">
-                <table className="product-table">
-                  <thead>
-                    <tr>
-                      <th>Id товара</th>
-                      <th>Название</th>
-                      <th>Цена, ₽</th>
-                      <th>Продано, шт</th>
-                      <th>Общая выручка</th>
-                      <th>О товаре</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td colSpan={5} style={{ textAlign: 'center' }}>
-                        <div className="product-placeholder">Таблица товаров</div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+            <h3> Товаров в чеке по дням </h3>
+          
+              <ProductCountChart />
+
             </div>
+
+
+            
             <div className="product-details-block">
-              <h3>Детали товара</h3>
-              <div className="product-details-container">
-                <div className="product-details-card">
-                  <div className="product-detail-label">Товар:</div>
-                  <div className="product-detail-value">-</div>
-                  
-                  <div className="product-detail-label">Кол-во, шт:</div>
-                  <div className="product-detail-value">-</div>
-                  
-                  <div className="product-detail-label">Цена:</div>
-                  <div className="product-detail-value">-</div>
-                  
-                  <div className="product-detail-label">Сумма:</div>
-                  <div className="product-detail-value">-</div>
-                
-                </div>
-              </div>
+          
+              <h3>Популярные категории</h3>
+            <div className="product-types-content">
+              <ProductCategoriesChart />
+            </div>
+           
             </div>
           </div>
         </div>
