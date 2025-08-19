@@ -7,7 +7,6 @@
   box-sizing: border-box;
 }
 
-/* Основные стили dashboard */
 .dashboard-row {
   display: flex;
   gap: 20px;
@@ -82,7 +81,7 @@
   border-radius: 8px;
   font-family: 'Titillium Web', sans-serif;
   color: #ffffff;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /* Эффекты при наведении */

@@ -1,0 +1,24 @@
+.invalid-list-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .invalid-list-block {
+    flex: 1;
+    min-width: 0; 
+  }
+  
+  .invalid-row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .invalid-list-block, .valid-details-block {
+    flex: 1;
+  }
+  
+  
+  
+  
+  

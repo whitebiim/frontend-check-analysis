@@ -8,6 +8,7 @@ import { MonthlySales } from '../../components/homePage/monthlySales';
 import { SumReceiptAverage } from '../../components/homePage/sumReceipt';
 import { CountReceiptAverage } from '../../components/homePage/countReceipt';
 import { PaymentType } from '../../components/homePage/typePay';
+import { YearlySalesComparison } from '../../components/homePage/yearlySalesComparison';
 
 import './homePage.css';
 
@@ -29,13 +30,12 @@ export const HomePage = () => {
               
               <div className="stats-content">
               <DailyStats />
-                {/* тут потом доделать */}
               </div>
             </div>
             <div className="chart-block medium">
-              <h3>Динамика продаж</h3>
+              <h3>Динамика продаж за год</h3>
               <div className="chart-container">
-                {/* тут потом доделать  */}
+                <YearlySalesComparison />
          
               </div>
             </div>
@@ -44,13 +44,8 @@ export const HomePage = () => {
           {/* вторая строка */}
           <div className="dashboard-row">
             <div className="chart-block wide">
-              {/* <h3>Продажи за месяц</h3> */}
-              {/* <div className="chart-container"> */}
                 {/* тут потом доделать большой график */}
-               
                  <MonthlySales />
-                   
-              {/* </div> */}
             </div>
           </div>
 
@@ -59,14 +54,12 @@ export const HomePage = () => {
             <div className="chart-block small">
               <h3>Тип оплаты</h3>
               <div className="chart-container">
-                {/* тут потом доделать */}
                 <PaymentType/>
               </div>
             </div>
             <div className="chart-block small">
               <h3>Средний чек</h3>
               <div className="chart-container">
-                {/* тут потом доделать  */}
                 <SumReceiptAverage />
               </div>
             </div>

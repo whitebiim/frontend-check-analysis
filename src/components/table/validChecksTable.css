@@ -1,0 +1,23 @@
+.valid-list-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.valid-list-block {
+  flex: 1;
+  min-width: 0; 
+}
+
+.valid-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.valid-list-block, .valid-details-block {
+  flex: 1;
+}
+
+
+
+

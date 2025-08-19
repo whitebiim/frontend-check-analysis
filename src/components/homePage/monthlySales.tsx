@@ -86,8 +86,8 @@ export const MonthlySales = () => {
         display: true,
         text: `Продажи за ${selectedMonth}`,
         font: {
-          size: 16,
-          weight: 'bold'
+          size: 16
+         
         }
       }
     },
@@ -97,8 +97,7 @@ export const MonthlySales = () => {
           display: true,
           text: 'Дни месяца',
           font: {
-            size: 14,
-            weight: 'bold'
+            size: 14
           }
         },
         grid: {
@@ -110,8 +109,7 @@ export const MonthlySales = () => {
           display: true,
           text: 'Сумма (₽)',
           font: {
-            size: 14,
-            weight: 'bold'
+            size: 14
           }
         },
         beginAtZero: false,

@@ -1,11 +1,9 @@
-/* Основные стили для страницы валидных чеков */
 .valid-content-area {
   padding: 20px;
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Строки с блоками */
 .valid-row {
   display: flex;
   gap: 20px;
@@ -13,7 +11,6 @@
   width: 100%;
 }
 
-/* Общие стили для блоков */
 .valid-stats-block,
 .valid-chart-block,
 .valid-list-block,
@@ -27,35 +24,30 @@
   box-sizing: border-box;
 }
 
-/* Блок статистики */
 .valid-stats-block {
-  flex: 0 1 calc(50% - 10px); /* 50% ширины минус половина gap */
+  flex: 0 1 calc(50% - 10px); 
   min-width: 300px;
   height: 350px;
 }
 
-/* Блок с графиком */
 .valid-chart-block {
-  flex: 0 1 calc(50% - 10px); /* 50% ширины минус половина gap */
+  flex: 0 1 calc(50% - 10px); 
   min-width: 300px;
   height: 350px;
 }
 
-/* Блок списка чеков */
 .valid-list-block {
   flex: 0 1 calc(50% - 10px);
   min-width: 300px;
   height: 950px;
 }
 
-/* Блок деталей чека */
 .valid-details-block {
   flex: 0 1 calc(50% - 10px);
   min-width: 300px;
   height: 950px;
 }
 
-/* Заголовки блоков */
 .valid-stats-block h3,
 .valid-chart-block h3,
 .valid-list-block h3,
@@ -69,15 +61,12 @@
   letter-spacing: 0.5px;
 }
 
-/* Контейнеры для контента */
 .valid-stats-content,
 .valid-chart-container,
 .valid-list-container,
 .valid-details-container {
   height: calc(100% - 40px);
   display: flex;
-  /* align-items: center;
-  justify-content: center; */
   background: #ffffff;
   border-radius: 8px;
   font-family: 'Titillium Web', sans-serif;
@@ -86,12 +75,6 @@
   
 }
 
-
-
-
-
-
-/* Эффекты при наведении */
 .valid-stats-block:hover,
 .valid-chart-block:hover,
 .valid-list-block:hover,
@@ -101,7 +84,6 @@
               0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-/* Адаптивность */
 @media (max-width: 1200px) {
   .valid-row {
     flex-wrap: wrap;
@@ -125,7 +107,6 @@
   }
 }
 
-/* Для очень больших экранов */
 @media (min-width: 2000px) {
   .valid-content-area {
     max-width: 1800px;
@@ -133,7 +114,6 @@
   }
 }
 
-/* Плейсхолдеры */
 .valid-placeholder {
   font-family: 'Titillium Web', sans-serif;
   font-weight: 400;

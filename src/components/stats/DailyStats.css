@@ -14,7 +14,7 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  text-align: left; /* Добавлено выравнивание по левому краю */
+  text-align: left; 
 }
 
 .stat-card:nth-child(1) { background-color: #DCFCE7; }
@@ -98,10 +98,10 @@
   
   .stat-card {
     width: 100%;
-    height: 160px; /* Немного уменьшаем высоту на мобильных */
+    height: 160px; 
   }
   
   .stat-value {
-    font-size: 1.5rem; /* Уменьшаем размер шрифта на мобильных */
+    font-size: 1.5rem; 
   }
 }

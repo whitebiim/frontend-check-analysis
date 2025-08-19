@@ -5,7 +5,7 @@
   
   .main-content {
     flex: 1;
-    margin-left: 100px; /* Ширина sidebar */
+    margin-left: 100px; 
   }
   
   .content-area {

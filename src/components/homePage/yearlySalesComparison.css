@@ -1,0 +1,142 @@
+.yearly-sales-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.yearly-sales-controls {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.yearly-select-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.yearly-select-label {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 0.9rem;
+  color: #64748B;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.yearly-select-dropdown {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #E2E8F0;
+  background-color: #FFFFFF;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 0.9rem;
+  color: #1E293B;
+  cursor: pointer;
+  min-width: 90px;
+  transition: border-color 0.2s ease;
+}
+
+.yearly-select-dropdown:hover {
+  border-color: #5D5FEF;
+}
+
+.yearly-select-dropdown:focus {
+  outline: none;
+  border-color: #5D5FEF;
+  box-shadow: 0 0 0 2px rgba(93, 95, 239, 0.1);
+}
+
+.yearly-chart-container {
+  flex: 1;
+  min-height: 0; /* Важно для flex-контейнера */
+  width: 100%;
+  position: relative;
+}
+
+/* Убираем фиксированные размеры для контейнера графика */
+.yearly-chart-container > div {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Стили для основного блока на главной */
+.sales-dynamics-block {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sales-dynamics-block h3 {
+  margin: 0 0 20px 0;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1E293B;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.sales-dynamics-chart {
+  flex: 1;
+  min-height: 0; /* Важно для flex-контейнера */
+  width: 100%;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .yearly-sales-wrapper {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .yearly-sales-controls {
+    justify-content: flex-start;
+    margin-bottom: 15px;
+  }
+  
+  .yearly-select-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .yearly-select-dropdown {
+    min-width: 80px;
+    padding: 7px 14px;
+  }
+  
+  .sales-dynamics-block {
+    padding: 16px;
+  }
+  
+  .sales-dynamics-block h3 {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .yearly-select-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .yearly-select-label {
+    font-size: 0.85rem;
+  }
+  
+  .yearly-select-dropdown {
+    width: 100%;
+    max-width: 120px;
+  }
+}

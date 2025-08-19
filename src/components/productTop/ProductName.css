@@ -24,8 +24,8 @@
     font-family: 'Titillium Web', sans-serif;
     font-weight: 600;
     color: #64748B;
-    width: 25px; /* Фиксированная ширина для цифр */
-    margin-right: 15px; /* Увеличили отступ справа */
+    width: 25px; 
+    margin-right: 15px; 
   }
   
   
@@ -86,7 +86,6 @@
     color: #D24DFF;
   }
   
-  /* Адаптация для очень маленьких экранов */
   @media (max-width: 768px) {
     .category-item {
       padding: 6px 8px;
