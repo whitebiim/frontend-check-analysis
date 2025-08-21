@@ -15,11 +15,11 @@
     text-align: center;
   }
   
-  .chart-container {
+  /* .chart-container {
     width: 250px;
     height: 250px;
     position: relative;
-  }
+  } */
   
   .chart-center-info {
     position: absolute;
@@ -59,3 +59,4 @@
       font-size: 0.7rem;
     }
   }
+  
