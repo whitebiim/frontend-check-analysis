@@ -5,11 +5,20 @@
     flex-direction: column;
   }
   
-  .chart-controls {
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: flex-end;
-  }
+.chart-controls {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: baseline; 
+  flex-shrink: 0; 
+}
+.chart-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1E293B;
+}
+
   
   .month-select {
     padding: 6px 12px;

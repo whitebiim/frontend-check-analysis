@@ -40,8 +40,8 @@ export const SumReceiptAverage = () => {
     if (chartRef.current) {
       const ctx = chartRef.current.ctx;
       const gradient = ctx.createLinearGradient(0, 0, 0, chartRef.current.height);
-      gradient.addColorStop(0, 'rgba(66, 182, 246, 0.5)'); 
-      gradient.addColorStop(1, 'rgba(93, 95, 239, 0.01)');
+      gradient.addColorStop(0, 'rgba(66, 182, 246, 0.8)'); 
+      gradient.addColorStop(1, 'rgba(240, 249, 255, 0.3)');
       setGradient(gradient);
     }
   }, []);
@@ -50,13 +50,13 @@ export const SumReceiptAverage = () => {
     labels: Array.from({ length: receiptData.payload.sumReceipt.length }, (_, i) => ` ${i + 1}`),
     datasets: [
       {
-        label: 'Средний чек',
+        label: 'Средний чек в день     ',
         data: receiptData.payload.sumReceipt,
-        borderColor: '#5D5FEF',
+        borderColor: '#0095FF',
         backgroundColor: gradient,
-        borderWidth: 2,
+        borderWidth: 1,
         pointRadius: 3,
-        pointBackgroundColor: '#5D5FEF',
+        pointBackgroundColor: '#0095FF',
         pointHoverRadius: 5,
         tension: 0.3,
         fill: true,
@@ -80,7 +80,15 @@ export const SumReceiptAverage = () => {
       legend: {
         position: 'top',
         labels: {
-          usePointStyle: true,
+          font: {
+            size: 11,
+            family: "'Titillium Web', sans-serif"
+          },
+          padding: 2,
+          usePointStyle: true, 
+          boxWidth: 20,
+          pointStyle: 'circle',      
+          boxHeight: 8 
         }
       },
       tooltip: {
@@ -98,14 +106,18 @@ export const SumReceiptAverage = () => {
         text: `Средний чек за ${selectedMonth}`,
         font: {
           size: 14
+        },
+        padding: {
+          bottom: 20 
         }
       }
     },
     scales: {
       x: {
         title: {
-          display: true,
-          text: 'Дни месяца'
+          display: true
+          // ,
+          // text: 'Дни месяца'
         },
         grid: {
           display: false,
@@ -124,6 +136,7 @@ export const SumReceiptAverage = () => {
   return (
     <div className="average-receipt-chart">
       <div className="chart-controls">
+      <h3 className="chart-title">Средний чек</h3>
         <select 
           value={selectedMonth}
           onChange={(e) => setSelectedMonth(e.target.value)}

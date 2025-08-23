@@ -49,14 +49,13 @@ export const YearlySalesComparison = () => {
     if (chartRef.current) {
       const ctx = chartRef.current.canvas.getContext('2d');
       if (ctx) {
-        // Градиент для текущего года
-        const gradientCurrent = ctx.createLinearGradient(0, 0, 0, 400);
-        gradientCurrent.addColorStop(0, 'rgba(93, 95, 239, 0.1)');
-        gradientCurrent.addColorStop(1, 'rgba(249, 249, 249, 0)');
-        
-        // Градиент для выбранного года
-        const gradientSelected = ctx.createLinearGradient(0, 0, 0, 400);
-        gradientSelected.addColorStop(0, 'rgba(16, 185, 129, 0.1)');
+       
+        const gradientCurrent = ctx.createLinearGradient(0, 0, 0, 300);
+        gradientCurrent.addColorStop(0, 'rgba(66, 182, 246, 0.3)');
+        gradientCurrent.addColorStop(1, 'rgba(255, 255, 255, 0)');
+       
+        const gradientSelected = ctx.createLinearGradient(0, 0, 0, 300);
+        gradientSelected.addColorStop(0, 'rgba(60, 216, 86, 0.3)');
         gradientSelected.addColorStop(1, 'rgba(255, 255, 255, 0)');
 
         setGradients({
@@ -73,26 +72,26 @@ export const YearlySalesComparison = () => {
       {
         label: `${currentYear}`,
         data: salesData.payload.currentYear,
-        borderColor: '#5D5FEF',
+        borderColor: '#0095FF',
         backgroundColor: gradients.currentYear || 'rgba(93, 95, 239, 0.1)',
         borderWidth: 2,
         pointRadius: 2,
-        pointBackgroundColor: '#5D5FEF',
+        pointBackgroundColor: '#0095FF',
         pointHoverRadius: 5,
         tension: 0.3,
-        fill: true, // Включаем заливку
+        fill: true, 
       },
       {
         label: `${selectedYear}`,
         data: salesData.payload.otherYear,
-        borderColor: '#10B981',
+        borderColor: '#3CD856',
         backgroundColor: gradients.selectedYear || 'rgba(16, 185, 129, 0.1)',
         borderWidth: 2,
         pointRadius: 2,
-        pointBackgroundColor: '#10B981',
+        pointBackgroundColor: '#3CD856',
         pointHoverRadius: 4,
         tension: 0.3,
-        fill: true, // Включаем заливку
+        fill: true,
         borderDash: [5, 5],
       }
     ]
@@ -109,9 +108,12 @@ export const YearlySalesComparison = () => {
             size: 11,
             family: "'Titillium Web', sans-serif"
           },
-          padding: 20,
+          padding: 5,
           usePointStyle: true,
-          boxWidth: 20
+          boxWidth: 20,
+          pointStyle: 'circle',      
+          boxHeight: 6  
+          
         }
       },
       tooltip: {
@@ -170,20 +172,18 @@ export const YearlySalesComparison = () => {
     layout: {
       padding: {
         top: 5,
-        bottom: 5,
-        left: 5,
-        right: 5
+        bottom: -5,
+        left: 0,
+        right: -5
       }
     }
   };
 
   return (
     <div className="yearly-sales-wrapper">
-      <div className="yearly-sales-controls">
-        <div className="yearly-select-container">
-          <label htmlFor="year-select" className="yearly-select-label">
-            Сравнить с:
-          </label>
+      <div className="chart-controls">
+         <h3 className="chart-title">Динамика продаж</h3>    
+         
           <select 
             id="year-select"
             value={selectedYear}
@@ -195,8 +195,7 @@ export const YearlySalesComparison = () => {
             ))}
           </select>
         </div>
-      </div>
-      
+       
       <div className="yearly-chart-container">
         <Line 
           ref={chartRef}

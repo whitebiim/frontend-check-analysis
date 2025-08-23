@@ -49,8 +49,8 @@ export const ProductCountChart = () => {
         data: productData.payload.countProduct,
         borderColor: '#8B5CF6',
         backgroundColor: gradient,
-        borderWidth: 3,
-        pointRadius: 4,
+        borderWidth: 2,
+        pointRadius: 3,
         pointBackgroundColor: '#8B5CF6',
         pointHoverRadius: 6,
         tension: 0.4,
@@ -64,13 +64,18 @@ export const ProductCountChart = () => {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'top',
+        position: 'bottom',
         labels: {
-          usePointStyle: true,
-          padding: 15,
           font: {
-            size: 12
-          }
+            size: 12,
+            family: "'Titillium Web', sans-serif"
+          },
+          padding: 5,
+          usePointStyle: true,
+          boxWidth: 20,
+          pointStyle: 'circle',      
+          boxHeight: 6  
+          
         }
       },
       tooltip: {
@@ -87,7 +92,7 @@ export const ProductCountChart = () => {
       x: {
         title: {
           display: true,
-          text: 'Дни месяца',
+          // text: 'Дни месяца',
           font: {
             size: 12
           }

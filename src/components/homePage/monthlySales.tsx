@@ -37,7 +37,6 @@ export const MonthlySales = () => {
   
   const [selectedMonth, setSelectedMonth] = useState<string>(months[new Date().getMonth()]);
 
-  // Данные для графика
   const chartData = {
     labels: Array.from({ length: monthlyData.payload.sums.length }, (_, i) => ` ${i + 1}`),
     datasets: [
@@ -48,13 +47,13 @@ export const MonthlySales = () => {
         backgroundColor: (context: ScriptableContext<'line'>) => {
           const ctx = context.chart.ctx;
           const gradient = ctx.createLinearGradient(0, 0, 0, context.chart.height);
-          gradient.addColorStop(0, 'rgba(66, 182, 246, 0.5)');
-          gradient.addColorStop(1, 'rgba(93, 95, 239, 0.01)');
+          gradient.addColorStop(0, 'rgba(67, 121, 238, 0.8)');
+          gradient.addColorStop(1, 'rgba(255, 255, 255, 0.1)');
           return gradient;
         },
-        borderWidth: 3,
-        pointRadius: 4,
-        pointBackgroundColor: '#5D5FEF',
+        borderWidth: 2,
+        pointRadius: 3,
+        pointBackgroundColor: '#4379EE',
         pointHoverRadius: 6,
         tension: 0.3,
         fill: true,
@@ -62,17 +61,18 @@ export const MonthlySales = () => {
     ]
   };
 
-  // Настройки с правильной типизацией
   const options: ChartOptions<'line'> = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'top',
+        position: 'bottom',
         labels: {
           font: {
-            size: 14
-          }
+            size: 14,
+            family: "'Titillium Web', sans-serif"
+          },
+          padding: 5
         }
       },
       tooltip: {
@@ -95,7 +95,7 @@ export const MonthlySales = () => {
       x: {
         title: {
           display: true,
-          text: 'Дни месяца',
+          // text: 'Дни месяца',
           font: {
             size: 14
           }

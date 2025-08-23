@@ -33,8 +33,8 @@ export const HomePage = () => {
               </div>
             </div>
             <div className="chart-block medium">
-              <h3>Динамика продаж за год</h3>
-              <div className="chart-container">
+              {/* <h3>Динамика продаж </h3> */}
+              <div className="chart-containertop">
                 <YearlySalesComparison />
          
               </div>
@@ -44,7 +44,6 @@ export const HomePage = () => {
           {/* вторая строка */}
           <div className="dashboard-row">
             <div className="chart-block wide">
-                {/* тут потом доделать большой график */}
                  <MonthlySales />
             </div>
           </div>
@@ -52,22 +51,23 @@ export const HomePage = () => {
           {/* третья строка */}
           <div className="dashboard-row">
             <div className="chart-block small">
-              <h3>Тип оплаты</h3>
+              {/* <h3>Тип оплаты</h3> */}
               <div className="chart-container">
+              <div className="chart-containerpay">
                 <PaymentType/>
+                </div>
               </div>
             </div>
             <div className="chart-block small">
-              <h3>Средний чек</h3>
+              {/* <h3>Средний чек</h3> */}
               <div className="chart-container">
                 <SumReceiptAverage />
               </div>
             </div>
             <div className="chart-block small">
-              <h3>Количество чеков</h3>
+              {/* <h3>Количество чеков</h3> */}
               <div className="chart-container">
                 {/* тут потом доделать  */}
-
                 <CountReceiptAverage/>
               </div>
             </div>

@@ -9,8 +9,16 @@
 .chart-controls {
   margin-bottom: 10px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between; 
+  align-items: baseline; 
   flex-shrink: 0; 
+}
+.chart-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1E293B;
+  
 }
 
 .month-select {
@@ -33,7 +41,8 @@
   min-height: 250px;
   position: relative;
   overflow: hidden; 
-  margin-top: 20px; 
+  margin-top: 10px; 
+  
 }
 
 .chart-container > div {
@@ -54,6 +63,7 @@
   justify-content: center;
   padding: 10px;
   border-radius: 8px;
+  margin-top: auto;
 }
 
 .change-item {
@@ -99,3 +109,4 @@
 .change-value.negative {
   color: #EF4444;
 }
+

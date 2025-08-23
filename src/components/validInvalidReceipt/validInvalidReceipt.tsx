@@ -35,14 +35,14 @@ export const ReceiptValidityChart = () => {
     if (chartRef.current) {
       const ctx = chartRef.current.ctx;
       
-      const gradientValid = ctx.createLinearGradient(0, 0, 0, 400);
+      const gradientValid = ctx.createLinearGradient(0, 0, 0, 200);
       gradientValid.addColorStop(0, 'rgba(16, 185, 129, 0.3)');
-      gradientValid.addColorStop(1, 'rgba(255, 255, 255, 0.7)');
+      gradientValid.addColorStop(1, 'rgba(255, 255, 255, 0)');
       setGradientValid(gradientValid);
       
-      const gradientInvalid = ctx.createLinearGradient(0, 0, 0, 400);
+      const gradientInvalid = ctx.createLinearGradient(0, 0, 0, 200);
       gradientInvalid.addColorStop(0, 'rgba(239, 68, 68, 0.3)');
-      gradientInvalid.addColorStop(1, 'rgba(255, 255, 255, 0.7)');
+      gradientInvalid.addColorStop(1, 'rgba(255, 255, 255, 0)');
       setGradientInvalid(gradientInvalid);
     }
   }, []);
@@ -51,7 +51,7 @@ export const ReceiptValidityChart = () => {
     labels: Array.from({ length: receiptData.payload.validReceipt.length }, (_, i) => `${i + 1}`),
     datasets: [
       {
-        label: 'Валидные чеки',
+        label: 'Валидные чеки       ',
         data: receiptData.payload.validReceipt,
         borderColor: '#10B981',
         backgroundColor: gradientValid,
@@ -87,10 +87,11 @@ export const ReceiptValidityChart = () => {
           font: {
             size: 14
           },
-          padding: 20,
-          usePointStyle: true,
-          boxWidth: 8,  
-        boxHeight: 8 
+          padding: 2,
+          usePointStyle: true, 
+          boxWidth: 20,
+          pointStyle: 'circle',      
+          boxHeight: 8 
        
         }
       },
@@ -110,7 +111,7 @@ export const ReceiptValidityChart = () => {
       x: {
         title: {
           display: true,
-          text: 'Дни месяца',
+          // text: 'Дни месяца',
           font: {
             size: 14
           }

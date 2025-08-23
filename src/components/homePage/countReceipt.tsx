@@ -41,8 +41,8 @@ export const CountReceiptAverage = () => {
     if (chartRef.current) {
       const ctx = chartRef.current.ctx;
       const gradient = ctx.createLinearGradient(0, 0, 0, chartRef.current.height);
-      gradient.addColorStop(0, 'rgba(60, 216, 86, 0.5)'); 
-      gradient.addColorStop(1, 'rgba(60, 216, 86, 0.01)');
+      gradient.addColorStop(0, 'rgba(60, 216, 86, 0.8)'); 
+      gradient.addColorStop(1, 'rgba(255, 255, 255, 0.3)');
       setGradient(gradient);
     }
   }, []);
@@ -51,11 +51,11 @@ export const CountReceiptAverage = () => {
     labels: Array.from({ length: receiptData.payload.countReceipt.length }, (_, i) => ` ${i + 1}`),
     datasets: [
       {
-        label: 'Кол-во чеков',
+        label: 'Кол-во чеков в день     ',
         data: receiptData.payload.countReceipt,
         borderColor: '#3CD856',
         backgroundColor: gradient,
-        borderWidth: 2,
+        borderWidth: 1,
         pointRadius: 3,
         pointBackgroundColor: '#3CD856',
         pointHoverRadius: 5,
@@ -81,7 +81,15 @@ export const CountReceiptAverage = () => {
       legend: {
         position: 'top',
         labels: {
-          usePointStyle: true,
+          font: {
+            size: 11,
+            family: "'Titillium Web', sans-serif"
+          },
+          padding: 2,
+          usePointStyle: true, 
+          boxWidth: 20,
+          pointStyle: 'circle',      
+          boxHeight: 8 
         }
       },
       tooltip: {
@@ -99,14 +107,18 @@ export const CountReceiptAverage = () => {
         text: `Количество чеков за ${selectedMonth}`,
         font: {
           size: 14
+        },
+        padding: {
+          bottom: 20 
         }
       }
     },
     scales: {
       x: {
         title: {
-          display: true,
-          text: 'Дни месяца'
+          display: true
+          // ,
+          // text: 'Дни месяца'
         },
         grid: {
           display: false,
@@ -125,6 +137,7 @@ export const CountReceiptAverage = () => {
   return (
     <div className="average-receipt-chart">
       <div className="chart-controls">
+      <h3 className="chart-title">Количество чеков</h3>
         <select 
           value={selectedMonth}
           onChange={(e) => setSelectedMonth(e.target.value)}

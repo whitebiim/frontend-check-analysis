@@ -16,7 +16,7 @@
   flex-wrap: wrap;
 }
 
-/* Общие стили для блоков */
+
 .stats-block, 
 .chart-block {
   background: #FFFFFF;
@@ -28,7 +28,6 @@
   box-sizing: border-box;
 }
 
-/* Специфические стили для каждого типа блоков */
 .stats-block {
   flex: 0 1 calc(70% - 10px);
   min-width: 300px;
@@ -45,14 +44,7 @@
   flex: 0 1 100%;
   min-width: 100%;
   height: 500px;
-  /* width: 100px; */
 }
-/* 
-.chart-block.small {
-  flex: 0 1 calc(50% - 10px);
-  min-width: 300px;
-  height: 480px;
-} */
 
 .chart-block.small {
   flex: 0 1 calc(33.333% - 14px);
@@ -60,7 +52,6 @@
   height: 480px;
 }
 
-/* Заголовки блоков */
 .stats-block h3, 
 .chart-block h3 {
   font-family: 'Titillium Web', sans-serif;
@@ -72,19 +63,38 @@
   letter-spacing: 0.5px;
 }
 
-/* Контейнеры для контента */
-.stats-content, 
-.chart-container {
+.stats-content{
   height: calc(100% - 40px);
   display: flex;
   background: #ffffff;
   border-radius: 8px;
   font-family: 'Titillium Web', sans-serif;
   color: #ffffff;
-  /* overflow: hidden; */
+ 
+}
+.chart-containertop{
+  height: 100%;
+  display: flex;
+  background: #ffffff;
+  border-radius: 8px;
+  font-family: 'Titillium Web', sans-serif;
+  color: #ffffff;
 }
 
-/* Эффекты при наведении */
+.chart-container {
+  height: 100%;
+  display: flex;
+  background: #ffffff;
+  border-radius: 8px;
+  font-family: 'Titillium Web', sans-serif;
+  color: #ffffff;
+ 
+}
+.chart-containerpay {
+  max-width: 500px; 
+  max-height: 370px;
+}
+
 .stats-block:hover, 
 .chart-block:hover {
   transform: translateY(-3px);
@@ -92,7 +102,6 @@
               0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-/* Стили для статистики */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -136,7 +145,6 @@
   color: #1E293B;
 }
 
-/* Плейсхолдеры */
 .chart-placeholder {
   font-family: 'Titillium Web', sans-serif;
   font-weight: 400;
@@ -146,7 +154,6 @@
   font-size: clamp(0.9rem, 1.2vw, 1.1rem);
 }
 
-/* Адаптивность */
 @media (max-width: 1200px) {
   .stats-block,
   .chart-block.medium,

@@ -69,13 +69,14 @@ export const PaymentType = () => {
         },
         title: {
           display: true,
-          text: `Тип оплаты за ${selectedMonth}`,
+          text: `                   Тип оплаты за ${selectedMonth}`,
+          
           font: {
             size: 14
           },
           padding: {
-            bottom: 10 
-          }
+            bottom: 20 
+          }           
         }
       },
       scales: {
@@ -97,6 +98,7 @@ export const PaymentType = () => {
     return (
       <div className="payment-type-chart">
         <div className="chart-controls">
+          <h3 className="chart-title">Тип оплаты</h3>
           <select 
             value={selectedMonth}
             onChange={(e) => setSelectedMonth(e.target.value)}
