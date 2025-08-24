@@ -52,13 +52,13 @@ export const InValidChecksTable = () => {
   };
 
   return (
-    <div className="invalid-content-area">
+    <div>
       <div className="invalid-row">
         <div className="invalid-list-block">
           <h3>Список невалидных чеков</h3>
           <div className="invalid-list-container">
-            <StyledTableWrapper>
-              <TableContainer component={Paper} sx={{ maxHeight: 850, width: 600 }}>
+            <StyledTableWrapper sx={{ width: '100%' }}>
+              <TableContainer component={Paper} sx={{ maxHeight: 850 }}>
                 <Table stickyHeader aria-label="invalid checks table">
                   <TableHead>
                     <TableRow>
