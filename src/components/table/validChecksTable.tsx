@@ -52,13 +52,13 @@ export const ValidChecksTable = () => {
   };
 
   return (
-    <div className="valid-content-area">
+    <div>
       <div className="valid-row">
         <div className="valid-list-block">
           <h3>Список валидных чеков</h3>
           <div className="valid-list-container">
-            <StyledTableWrapper>
-              <TableContainer component={Paper} sx={{ maxHeight: 850, width: 600 }}>
+            <StyledTableWrapper sx={{ width: '100%' }}>
+              <TableContainer component={Paper} sx={{ maxHeight: 850 }}>
                 <Table stickyHeader aria-label="valid checks table">
                   <TableHead>
                     <TableRow>
