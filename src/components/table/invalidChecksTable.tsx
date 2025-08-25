@@ -115,17 +115,17 @@ export const InValidChecksTable = () => {
                 <div className="invalid-detail-section">
                   <h4>Информация о чеке</h4>
                   <div className="invalid-detail-row">
-                    <span className="invalid-detail-label">ID чека:</span>
+                    <span className="invalid-detail-label">ID чека: </span>
                     <span className="invalid-detail-value">{selectedCheck.Id}</span>
                   </div>
                   <div className="invalid-detail-row">
-                    <span className="invalid-detail-label">Дата:</span>
+                    <span className="invalid-detail-label">Дата: </span>
                     <span className="invalid-detail-value">
                       {new Date(selectedCheck.CreatedAt).toLocaleString('ru-RU')}
                     </span>
                   </div>
                   <div className="invalid-detail-row">
-                    <span className="invalid-detail-label">Общая сумма:</span>
+                    <span className="invalid-detail-label">Общая сумма: </span>
                     <span className="invalid-detail-value">
                       {selectedCheck.TotalSum.toLocaleString('ru-RU')} ₽
                     </span>
@@ -137,21 +137,21 @@ export const InValidChecksTable = () => {
                   {selectedCheck.Items.map((item: any, index: number) => (
                     <div key={index} className="invalid-product-item">
                       <div className="invalid-detail-row">
-                        <span className="invalid-detail-label">Товар:</span>
+                        <span className="invalid-detail-label">Товар: </span>
                         <span className="invalid-detail-value">{item.Name}</span>
                       </div>
                       <div className="invalid-detail-row">
-                        <span className="invalid-detail-label">Кол-во, шт:</span>
+                        <span className="invalid-detail-label">Кол-во, шт: </span>
                         <span className="invalid-detail-value">{item.Quantity}</span>
                       </div>
                       <div className="invalid-detail-row">
-                        <span className="invalid-detail-label">Цена:</span>
+                        <span className="invalid-detail-label">Цена: </span>
                         <span className="invalid-detail-value">
                           {item.Price.toLocaleString('ru-RU')} ₽
                         </span>
                       </div>
                       <div className="invalid-detail-row">
-                        <span className="invalid-detail-label">Сумма:</span>
+                        <span className="invalid-detail-label">Сумма: </span>
                         <span className="invalid-detail-value">
                           {item.Sum.toLocaleString('ru-RU')} ₽
                         </span>

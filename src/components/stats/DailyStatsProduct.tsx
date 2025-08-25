@@ -44,7 +44,7 @@ export const DailyStatsProduct = () => {
   ];
 
   return (
-    <div className="stats-grid">
+    <div className="statsprod-grid">
       {metrics.map((metric) => (
         <div key={metric.id} className="stat-card">
           <div className="stat-icon">

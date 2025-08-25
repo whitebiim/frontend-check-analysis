@@ -75,7 +75,7 @@
 .invalid-list-container,
 .invalid-details-container {
   height: calc(100% - 40px);
-  display: flex;
+  /* display: flex; */
   /* align-items: center;
   justify-content: center; */
   background: #ffffff;

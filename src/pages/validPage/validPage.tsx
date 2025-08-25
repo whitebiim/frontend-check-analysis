@@ -25,7 +25,7 @@ export const ValidPage = () => {
               </div>
             </div>
             <div className="valid-chart-block">
-              <h3>График чеков</h3>
+              <h3>График чеков  за текущий месяц</h3>
               <div className="valid-chart-container">
                 <ReceiptValidityChart />
               </div>

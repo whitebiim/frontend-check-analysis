@@ -1,6 +1,6 @@
 import React from 'react';
 import dailyStatsReceipts from '../../data/dailyStatsReceipts.json';
-import RevenueIcon from '../../assets/icons/stats/revenue.svg';
+import RevenueIcon from '../../assets/icons/stats/val.svg';
 import ReceiptIcon from '../../assets/icons/stats/receipt.svg';
 import CartIcon from '../../assets/icons/stats/cart.svg';
 import InvalIcon from '../../assets/icons/stats/inval.svg';

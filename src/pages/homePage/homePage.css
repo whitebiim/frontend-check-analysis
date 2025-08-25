@@ -104,7 +104,6 @@
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 20px;
   height: 100%;
   width: 100%;
@@ -183,9 +182,3 @@
   }
 }
 
-@media (min-width: 2000px) {
-  .app-layout {
-    max-width: 1800px;
-    margin: 0 auto;
-  }
-}

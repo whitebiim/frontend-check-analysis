@@ -26,7 +26,7 @@ export const InvalidPage = () => {
               </div>
             </div>
             <div className="invalid-chart-block">
-              <h3>График чеков</h3>
+              <h3>График чеков за текущий месяц</h3>
               <div className="invalid-chart-container">
                 <ReceiptValidityChart />
               </div>

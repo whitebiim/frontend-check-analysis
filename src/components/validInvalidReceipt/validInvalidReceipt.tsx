@@ -11,7 +11,8 @@ import {
   Tooltip, 
   Legend,
   Filler,
-  ChartOptions
+  ChartOptions,
+  ScriptableContext
 } from 'chart.js';
 import receiptData from '../../data/validInvalidReceipt.json';
 
@@ -28,37 +29,26 @@ ChartJS.register(
 
 export const ReceiptValidityChart = () => {
   const chartRef = useRef<any>(null);
-  const [gradientValid, setGradientValid] = useState<CanvasGradient>();
-  const [gradientInvalid, setGradientInvalid] = useState<CanvasGradient>();
-
-  useEffect(() => {
-    if (chartRef.current) {
-      const ctx = chartRef.current.ctx;
-      
-      const gradientValid = ctx.createLinearGradient(0, 0, 0, 200);
-      gradientValid.addColorStop(0, 'rgba(16, 185, 129, 0.3)');
-      gradientValid.addColorStop(1, 'rgba(255, 255, 255, 0)');
-      setGradientValid(gradientValid);
-      
-      const gradientInvalid = ctx.createLinearGradient(0, 0, 0, 200);
-      gradientInvalid.addColorStop(0, 'rgba(239, 68, 68, 0.3)');
-      gradientInvalid.addColorStop(1, 'rgba(255, 255, 255, 0)');
-      setGradientInvalid(gradientInvalid);
-    }
-  }, []);
 
   const chartData = {
     labels: Array.from({ length: receiptData.payload.validReceipt.length }, (_, i) => `${i + 1}`),
     datasets: [
       {
-        label: 'Валидные чеки       ',
+        label: 'Валидные чеки          ',
         data: receiptData.payload.validReceipt,
         borderColor: '#10B981',
-        backgroundColor: gradientValid,
+        backgroundColor: (context: ScriptableContext<'line'>) => {
+          if (!context.chart.chartArea) return;
+          const ctx = context.chart.ctx;
+          const gradient = ctx.createLinearGradient(0, 0, 0, context.chart.height);
+          gradient.addColorStop(0, 'rgba(16, 185, 129, 0.4)');
+          gradient.addColorStop(1, 'rgba(255, 255, 255, 0.0)');
+          return gradient;
+        },
         borderWidth: 2,
         pointRadius: 2,
         pointBackgroundColor: '#10B981',
-        pointHoverRadius: 6,
+        pointHoverRadius: 4,
         tension: 0.3,
         fill: true,
       },
@@ -66,11 +56,18 @@ export const ReceiptValidityChart = () => {
         label: 'Невалидные чеки',
         data: receiptData.payload.invalidReceipt,
         borderColor: '#EF4444',
-        backgroundColor: gradientInvalid,
+        backgroundColor: (context: ScriptableContext<'line'>) => {
+          if (!context.chart.chartArea) return;
+          const ctx = context.chart.ctx;
+          const gradient = ctx.createLinearGradient(0, 0, 0, context.chart.height);
+          gradient.addColorStop(0, 'rgba(239, 68, 68, 0.4)');
+          gradient.addColorStop(1, 'rgba(255, 255, 255, 0.0)');
+          return gradient;
+        },
         borderWidth: 2,
         pointRadius: 2,
         pointBackgroundColor: '#EF4444',
-        pointHoverRadius: 6,
+        pointHoverRadius: 4,
         tension: 0.3,
         fill: true,
       }
@@ -83,19 +80,18 @@ export const ReceiptValidityChart = () => {
     plugins: {
       legend: {
         position: 'bottom',
-          labels: {
+        labels: {
           font: {
-            size: 14
+            size: 14,
+            family: "'Titillium Web', sans-serif"
           },
-          padding: 2,
-          usePointStyle: true, 
+          padding: 5,
+          usePointStyle: true,
           boxWidth: 20,
-          pointStyle: 'circle',      
-          boxHeight: 8 
-       
+          pointStyle: 'circle',
+          boxHeight: 8
         }
       },
-  
       tooltip: {
         callbacks: {
           label: (context) => {
@@ -104,16 +100,21 @@ export const ReceiptValidityChart = () => {
         }
       },
       title: {
-        display: false
+        display: true,
+        text: 'Валидные и невалидные чеки',
+        font: {
+          size: 16,
+          family: "'Titillium Web', sans-serif"
+        }
       }
     },
     scales: {
       x: {
         title: {
           display: true,
-          // text: 'Дни месяца',
           font: {
-            size: 14
+            size: 14,
+            family: "'Titillium Web', sans-serif"
           }
         },
         grid: {
@@ -125,21 +126,24 @@ export const ReceiptValidityChart = () => {
           display: true,
           text: 'Количество чеков',
           font: {
-            size: 14
+            size: 14,
+            family: "'Titillium Web', sans-serif"
           }
         },
-        beginAtZero: true,
+        beginAtZero: false, 
       }
     }
   };
 
   return (
     <div className="chart-wrapper">
-      <Line 
-        ref={chartRef}
-        data={chartData} 
-        options={options} 
-      />
+      <div className="chart-container">
+        <Line 
+          ref={chartRef}
+          data={chartData} 
+          options={options} 
+        />
+      </div>
     </div>
   );
 };

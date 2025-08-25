@@ -10,7 +10,7 @@ export const Header = ({ pageTitle }: { pageTitle: string }) => {
       </div>
       <div className="company-container">
         <img src={Icon} alt="Иконка" className="header-icon" />
-        <div className="company-name">Название название</div>
+        <div className="company-name">ККМ Аналитика </div>
       </div>
     </header>
   );

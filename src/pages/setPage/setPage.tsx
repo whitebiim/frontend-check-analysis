@@ -28,6 +28,7 @@ export const SetPage = () => {
       <Sidebar />
       <div className="main-content">
         <Header pageTitle="Настройки" />
+        <div className="chart-block wide">
         <div className="content-area">
           <div className="setting-item">
             <label className="setting-label">
@@ -42,6 +43,24 @@ export const SetPage = () => {
               </label>
             </label>
           </div>
+          <div className="setting-item">
+            <label className="setting-label">
+            Темная тема:    
+              <label className="switch">
+                <input type="checkbox" />
+                <span className="slider round"></span>
+              </label>
+            </label>
+          </div>
+          <div className="setting-item">
+            <label className="setting-label">
+            Темная тема:
+              <label className="switch">
+                <input type="checkbox" />
+                <span className="slider round"></span>
+              </label>
+            </label>
+          </div>
 
           {isDarkMode && (
             <div className={`dark-theme-image-container ${isVisible ? 'visible' : ''}`}>
@@ -49,7 +68,7 @@ export const SetPage = () => {
             </div>
           )}
         </div>
-      </div>
+      </div> </div>
     </div>
   );
 };
